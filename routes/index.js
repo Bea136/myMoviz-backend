@@ -6,7 +6,7 @@ const TMDB_API_KEY = process.env.TMDB_API_KEY;
 //GET MOVIES FROM TMDB API
 router.get('/movies', (req, res) => {
   fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${TMDB_API_KEY}`)
-    .then(response => response.json())
+    .then(response => console.log(response.json()))
     .then(data => {
       res.json({ movies: data.results })
     })
